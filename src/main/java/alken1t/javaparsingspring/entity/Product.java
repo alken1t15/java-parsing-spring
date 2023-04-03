@@ -20,6 +20,7 @@ public class Product {
     @Column(name = "store_name")
     private String storeName;
 
+    private String category;
     private String name;
 
     @Column(name = "link_product")
@@ -29,8 +30,9 @@ public class Product {
 
     private LocalDate date;
 
-    public Product(String storeName, String name, String linkProduct, Integer price, LocalDate date) {
+    public Product(String storeName, String category, String name, String linkProduct, Integer price, LocalDate date) {
         this.storeName = storeName;
+        this.category = category;
         this.name = name;
         this.linkProduct = linkProduct;
         this.price = price;
