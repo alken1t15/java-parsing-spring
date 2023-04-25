@@ -6,7 +6,8 @@ CREATE TABLE product
     name         VARCHAR(255),
     link_product VARCHAR(255),
     price        INT4,
-    date         TIMESTAMP
+    date         TIMESTAMP,
+    img_link     VARCHAR(255)
 );
 CREATE TABLE shop
 (

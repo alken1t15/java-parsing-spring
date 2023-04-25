@@ -30,12 +30,16 @@ public class Product {
 
     private LocalDate date;
 
-    public Product(String storeName, String category, String name, String linkProduct, Integer price, LocalDate date) {
+    @Column(name = "img_link")
+    private String img;
+
+    public Product(String storeName, String category, String name, String linkProduct, Integer price, LocalDate date,String img) {
         this.storeName = storeName;
         this.category = category;
         this.name = name;
         this.linkProduct = linkProduct;
         this.price = price;
         this.date = date;
+        this.img = img;
     }
 }

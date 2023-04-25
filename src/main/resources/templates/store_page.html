@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <h2>Store</h2>
-<p>Новая страница</p>
+<!--<div th:each="product : ${products}">-->
+<!--    <p>Название товара:</p>-->
+<!--    <p th:text="${product.getName()}"></p>-->
+<!--    <p>Категория товара:</p>-->
+<!--    <p th:text="${product.getCategory()}"></p>-->
+<!--    <p>Магазин:</p>-->
+<!--    <p th:text="${product.getStoreName()}"></p>-->
+<!--    <p>Цена:</p>-->
+<!--    <p th:text="${product.getPrice()}"></p>-->
+<!--    <p>Дата:</p>-->
+<!--    <p th:text="${product.getDate()}"></p>-->
+<!--</div>-->
+<!-- Карточка товара -->
+<div class="main_div">
+<div th:each="product : ${products}" class="card">
+    <!-- Верхняя часть -->
+    <div class="card__top">
+        <!-- Изображение-ссылка товара -->
+        <a th:href="${product.getLinkProduct()}" class="card__image">
+            <img th:src="${product.getImg()}" th:alt="${product.getName()}"/>
+        </a>
+    </div>
+    <!-- Нижняя часть -->
+    <div class="card__bottom">
+        <!-- Цены на товар (с учетом скидки и без)-->
+        <div class="card__prices">
+            <div th:text="${product.getPrice()}" class="card__price card__price--common"></div>
+        </div>
+        <!-- Ссылка-название товара -->
+        <a th:href="${product.getLinkProduct()}" class="card__title" th:text="${product.getName()}" >
+        </a>
+    </div>
+</div>
+</div>
 </body>
 </html>
